@@ -1,0 +1,28 @@
+css
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+h1 {
+text-align: center;
+}
+form {
+margin-bottom: 20px;
+}
+input, button, select {
+padding: 10px;
+margin: 5px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th, td {
+border: 1px solid #ddd;
+
+padding: 8px;
+text-align: center;
+}
+th {
+background-color: #f4f4f4;
+}
