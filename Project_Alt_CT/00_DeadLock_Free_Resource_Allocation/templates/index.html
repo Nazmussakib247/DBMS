@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadlock-Free Resource Allocation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Deadlock-Free Resource Allocation</h2>
+    
+    <label for="num_processes">Number of Processes:</label>
+    <input type="number" id="num_processes" min="1" value="3">
+    
+    <label for="num_resources">Number of Resources:</label>
+    <input type="number" id="num_resources" min="1" value="3">
+    
+    <button onclick="generateTable()">Generate Table</button>
+
+    <div id="tables"></div>
+
+    <button onclick="checkSafety()">Check Safety</button>
+    <p id="result"></p>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
