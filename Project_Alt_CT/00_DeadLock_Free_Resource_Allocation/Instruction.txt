@@ -1,0 +1,70 @@
+Instructions for Using Deadlock-Free Resource Allocation System
+
+1. Running the Application
+
+Follow these steps to set up and run the application:
+
+Install Python (if not already installed)
+
+Ensure Python version 3.7 or higher is installed.
+
+Install Dependencies
+
+Run the following command to install necessary dependencies:t
+
+Run the Application
+
+Start the Flask application using:
+
+python app.py
+
+The server will start, and you can access the web interface at:
+
+http://127.0.0.1:5000
+
+2. Using the Web Interface
+
+Enter the number of processes and resources
+
+Input the desired number of processes and resources in the provided fields.
+
+Fill in Allocation and Maximum Need Matrices
+
+Enter values for allocated resources and maximum required resources for each process.
+
+Check Safe Sequence
+
+Click on the "Check Safety" button to determine if a safe sequence exists.
+
+The result will be displayed, indicating whether the state is safe or unsafe.
+
+3. Folder Structure
+
+Deadlock-Free-Resource-Allocation/
+│-- app.py
+│-- static/
+│   ├── style.css
+│   ├── script.js
+│-- templates/
+│   ├── index.html
+│-- requirements.txt
+│-- README.md
+│-- instruction.txt
+
+4. Troubleshooting
+
+Issue: Application not starting.
+
+Solution: Ensure all dependencies are installed by running:
+
+pip install -r requirements.txt
+
+Issue: Web interface not accessible.
+
+Solution: Ensure Flask is running by executing python app.py and check the console for errors.
+
+Issue: Incorrect results for safety check.
+
+Solution: Double-check the input values for allocation and maximum need matrices.
+
+For further assistance, feel free to reach out or create an issue in the repository.
