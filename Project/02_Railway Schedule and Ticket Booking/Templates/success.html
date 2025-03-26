@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Booking Successful!</h1>
+    <p>Your ticket has been booked successfully.</p>
+    <h2>Booking Details</h2>
+    <p><strong>Name:</strong> {{ booking.name }}</p>
+    <p><strong>Age:</strong> {{ booking.age }}</p>
+    <p><strong>Coach:</strong> {{ booking.coach }}</p>
+    <p><strong>Seat:</strong> {{ booking.seat }}</p>
+    <p><strong>Booking Date:</strong> {{ booking.booking_date }}</p>
+
+    <h2>User Details</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+
+    <br>
+    <a href="{{ url_for('booking_history') }}">View Booking History</a>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

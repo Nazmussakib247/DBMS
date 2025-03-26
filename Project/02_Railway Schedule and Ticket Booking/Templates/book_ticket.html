@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .seat-map {
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .seat {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .seat.selected {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Ticket</h1>
+    <form method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="coach">Coach:</label>
+        <select id="coach" name="coach" required>
+            <option value="A1">A1</option>
+            <option value="B1">B1</option>
+            <option value="C1">C1</option>
+            <option value="D1">D1</option>
+        </select>
+        <br>
+        <label for="seat">Seat:</label>
+        <input type="text" id="seat" name="seat" readonly required>
+        <div class="seat-map" id="seat-map">
+            <!-- Seat numbers will be dynamically generated here -->
+        </div>
+        <br>
+        <button type="submit">Confirm Booking</button>
+    </form>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <script>
+        // Generate seat map
+        const seatMap = document.getElementById('seat-map');
+        const seatInput = document.getElementById('seat');
+
+        for (let i = 1; i <= 80; i++) {
+            const seat = document.createElement('div');
+            seat.className = 'seat';
+            seat.textContent = i;
+            seat.addEventListener('click', () => {
+                // Deselect all seats
+                document.querySelectorAll('.seat').forEach(s => s.classList.remove('selected'));
+                // Select the clicked seat
+                seat.classList.add('selected');
+                seatInput.value = i;
+            });
+            seatMap.appendChild(seat);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Booking History</h1>
+    <h2>User Details</h2>
+    <p><strong>Name:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+
+    <h2>Booking Details</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Coach</th>
+                <th>Seat</th>
+                <th>Booking Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.id }}</td>
+                    <td>{{ booking.train_name }}</td>
+                    <td>{{ booking.destination }}</td>
+                    <td>{{ booking.coach }}</td>
+                    <td>{{ booking.seat }}</td>
+                    <td>{{ booking.booking_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
